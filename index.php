@@ -1,12 +1,12 @@
 <?php
+use Core\Router;
 
-define('DIRECT_ACCESS', true);
 define('DS', DIRECTORY_SEPARATOR);
 define('DIR_ROOT', dirname(__FILE__));
 define('URL_ROOT', DS . basename(__DIR__));
 
-require_once(DIR_ROOT . DS . 'config' . DS . 'config.php');
-require_once(DIR_ROOT . DS . 'app' . DS . 'lib' . DS . 'helpers' . DS . 'functions.php');
+require_once(DIR_ROOT . DS . 'Config' . DS . 'Config.php');
+require_once(DIR_ROOT . DS . 'App' . DS . 'Lib' . DS . 'Helpers' . DS . 'Functions.php');
 
 
 spl_autoload_register(function($className) {
@@ -20,7 +20,6 @@ session_start();
 
 $url = isset($_SERVER['PATH_INFO']) ? explode('/', ltrim($_SERVER['PATH_INFO'], '/')) : array();
 
-use core\Router;
 Router::route($url);
 
 ?>

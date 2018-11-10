@@ -60,7 +60,7 @@ class Language {
 
     private static function _setLanguageClass() {
         $lang = self::get();
-        include(DIR_ROOT . DS . 'App' . DS . 'languages' . DS . $lang . '.php');
+        include(DIR_ROOT . DS . 'App' . DS . 'Languages' . DS . $lang . '.php');
         self::$_languageClass = new $lang();
     }
 

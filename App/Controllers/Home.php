@@ -12,39 +12,8 @@ class Home extends Controller {
 
     public function index($par = "") {
         $data["users"] = $this->_usersModel->getUsers();
-        $data["form"] =  "";
         $this->view("default/other", $data);
         $this->view("default/layouts/header");
-    }
-
-    public function deneme() {
-        $form = new Form("");
-        $form->start_div(6, 6, 6, 6);
-        $form->add_date("ad", "Adınız", "2000-01-01");
-        $form->add_text("ad", "Adınız", "Adınızı Giriniz", "Emre");
-        $form->end_div();
-        $form->start_div(6, 6, 6, 6);
-        $form->add_password("ad", "Adınız");
-        $form->add_textarea("ad", "Adınız", "dsds");
-        $form->end_div();
-        $form->add_time("ad", "Adınız", "12:00");
-        $form->add_checkbox("ad2", "Adınız", "12:00");
-        $form->add_checkbox("ad3", "Adınız", "12:00");
-        $form->add_checkbox("ad23", "Adınız", "12:00");
-        $form->add_checkbox("ad24", "Adınız", "12:00");
-        $form->add_radio("ad4", "ad12", "Adınız", "12:00");
-        $form->add_radio("ad4", "ad13", "Adınız", "12:00");
-        $form->add_radio("ad4", "ad14", "Adınız", "12:00");
-        $form->add_radio("ad4", "ad15", "Adınız", "12:00");
-        $form->add_radio("ad4", "ad16", "Adınız", "12:00");
-        $form->add_radio("ad4", "ad17", "Adınız", "12:00");
-        $form->add_radio("ad4", "ad18", "Adınız", "12:00");
-        $form->add_radio("ad4", "ad19", "Adınız", "12:00");
-        $form->add_submit("Gönder");
-        $data["form"] = $form->get_form("denemeAction", "post", "-", "upload");
-        $this->view("default/layouts/header");
-        $this->view("default/other", $data);
-        $this->view("default/layouts/footer");
     }
 
     public function add() {

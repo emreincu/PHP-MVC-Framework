@@ -8,7 +8,7 @@ class Router {
     private $actionName;
     const REGEX_ANNOTATION = '/@(?P<name>\w+)\s+(?P<value>.+)/';
     public static function route($url) {
-        // ROUTER HEAD
+
         $url = isset($_SERVER['PATH_INFO']) ? explode('/', ltrim($_SERVER['PATH_INFO'], '/')) : array();
 
         $controller = (isset($url[0]) && $url[0] != '') ? $url[0] : DEFAULT_CONTROLLER;
@@ -28,7 +28,6 @@ class Router {
         } else {
             die("That method does not exists in the controller! \"" . $action ."\"");
         }
-        // ROUTER END
     } 
     
 }

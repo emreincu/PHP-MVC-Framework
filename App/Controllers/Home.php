@@ -3,9 +3,6 @@ namespace app\controllers;
 use Core\Controller;
 use App\Models\Users as UsersModel;
 
-/**
-* @Route anasayfa
-*/
 class Home extends Controller {
     private $_usersModel;
     public function __construct($controller, $action) {
@@ -13,9 +10,6 @@ class Home extends Controller {
         $this->_usersModel = new UsersModel();
     }
 
-    /**
-    * @Route Yeni-method, denemeMethod
-    */
     public function index($par = "") {
         $data["users"] = $this->_usersModel->getUsers();
         $data["form"] =  "";
@@ -53,9 +47,6 @@ class Home extends Controller {
         $this->view("default/layouts/footer");
     }
 
-    /**
-    * @Route ekle, arti
-    */
     public function add() {
         $fields = [
             "user_name" => "bambam",

@@ -7,10 +7,6 @@ use Core\Session;
 
 class Admin extends Controller{
     
-    /**
-     * User Model
-     * @var $usersModel
-     */
     private $_usersModel;
 
     public function __construct($controller, $action) {
@@ -46,9 +42,7 @@ class Admin extends Controller{
             go(URL_ROOT . DS . "admin");
         }
     }
-    /**
-    * @Route i-forgot-my-password, sifremi-unuttum
-    */
+    
     public function forgot_password() {
         $this->view->setTemplate("forgot_password");
         $this->view->render("admin/admin");

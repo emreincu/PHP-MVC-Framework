@@ -1,10 +1,6 @@
 <?php
-namespace app\controllers;
-use core\Controller;
-
-/**
-* @Route iletisim
-*/
+namespace App\Controllers;
+use Core\Controller;
 
 class Contact extends Controller {
     public function __construct($controller, $action) {

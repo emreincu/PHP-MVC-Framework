@@ -8,7 +8,7 @@ class Home extends Controller {
         parent::__construct($controller, $action);
     }
     public function index() {
-
+        echo "Emre";
     }
 
 }

@@ -9,7 +9,6 @@ class Home extends Controller {
     }
     public function index() {
         echo "Emre";
-        echo "Test";
     }
 
 }

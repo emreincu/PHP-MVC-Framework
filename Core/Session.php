@@ -3,7 +3,6 @@ namespace Core;
 
 class Session {
 
-
     public static function exists($name) {
         return (isset($_SESSION[$name])) ? true : false;
     }

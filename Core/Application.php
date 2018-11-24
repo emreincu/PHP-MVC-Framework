@@ -1,10 +1,17 @@
 <?php
 namespace Core;
+use ReflectionClass;
+use ReflectionMethod;
+use ReflectionParameter;
 
+/**
+ * This class using for set and get php ini settings
+ */
 class Application {
     public function __construct($controller, $action) {
         $this->_setReporting();
         $this->_unregisterGlobals();
+       
     }
 
     private function _setReporting() {

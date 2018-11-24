@@ -16,7 +16,7 @@ class Home extends Controller {
     public function index() {
         $user = new User();
         $yield['users'] = $user->getUsers();
-        $this->view->render("Home/test", $yield);
+        $this->view->render("Main/test", $yield);
     }
 
 }

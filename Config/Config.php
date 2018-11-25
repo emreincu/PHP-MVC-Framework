@@ -14,7 +14,6 @@ define("DB_NAME", "mvc");
 define('DEFAULT_CONTROLLER', "Home");
 define('DEFAULT_ACTION', "index");
 define('DEFAULT_TEMPLATE', "default");
-define('DEFAULT_LAYOUT', "default");
 define('SITE_TITLE', "MVC Framework Title");
 
 /* DIR congifureation */

@@ -2,6 +2,7 @@
 namespace Core;
 
 class Input {
+    
     public static function sanitize($input) {
         return htmlentities($input, ENT_QUOTES, 'UTF-8');
     }
@@ -13,4 +14,5 @@ class Input {
             return self::sanitize($_GET[$input]);
         }
     }
+
  }

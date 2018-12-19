@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <converts>
+        <convert name="title">Mi Aplicación</convert>
+        <convert name="hello dsadsad sad ağüsaş id world">Hola Mundo!</convert>
+    </converts>
+</resources>

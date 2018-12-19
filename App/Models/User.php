@@ -11,23 +11,7 @@ class User extends Model{
     }
 
     public function getUsers() {
-        return [
-            [
-                "ad" => "Emre",
-                "soyad" => "Incu",
-                "yas" => "26"
-            ],
-            [
-                "ad" => "Emre",
-                "soyad" => "Incu",
-                "yas" => "26"
-            ],
-            [
-                "ad" => "Emre",
-                "soyad" => "Incu",
-                "yas" => "26"
-            ]
-        ];
+        return $this->select();
     }
 
     public function getUserById() {

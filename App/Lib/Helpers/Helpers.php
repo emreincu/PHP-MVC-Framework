@@ -2,7 +2,11 @@
 
 function dnd($data) {
     echo "<pre>";
-    var_dump($data);
+    if($data) {
+        var_dump($data);
+    }else{
+        var_dump(null);
+    }
     echo "</pre>";
 }
 

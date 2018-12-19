@@ -3,6 +3,8 @@ namespace App\Controllers;
 
 use Core\Controller;
 use App\Models\User;
+use Core\Cookie;
+use Core\Language;
 
 class Home extends Controller {
     
@@ -12,9 +14,16 @@ class Home extends Controller {
     }
 
     public function index() {
+
+        $language = new Language();
+        $languageData = $language->getLanguageFile(Cookie::get("language"));
+        dnd($languageData);
+
+
         $user = new User();
         $yield['users'] = $user->getUsers();
         $this->view->render("Main/test", $yield);
     }
+
 
 }

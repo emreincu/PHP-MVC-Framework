@@ -17,8 +17,7 @@ class Home extends Controller {
 
         $language = new Language();
         $languageData = $language->getLanguageFile(Cookie::get("language"));
-        dnd($languageData);
-
+        echo $languageData->hello;
 
         $user = new User();
         $yield['users'] = $user->getUsers();

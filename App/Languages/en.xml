@@ -1,7 +1,5 @@
-<?php
-
-class en {
-    public function getVariables() {
-        
-    }
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<language>
+    <hello>Hello</hello>
+    <welcome>Welcome to our web site!</welcome>
+</language>

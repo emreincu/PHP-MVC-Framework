@@ -6,7 +6,7 @@ use Core\Cookie;
 
 class Language {
 
-    public static function getLanguageFile($language) {
+    public static function getLanguage($language) {
         if(file_exists(DIR_ROOT . DS . "App" . DS . "Languages" . DS . $language . ".xml")) {
             $xml = simplexml_load_file(DIR_ROOT . DS . "App" . DS . "Languages" . DS . $language . ".xml");
             return $xml;
@@ -14,7 +14,6 @@ class Language {
             die("Core\Language.php : The language file \"" . $language . "\" does not exists!");
         }
     }
-
 
 
 }

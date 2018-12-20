@@ -4,19 +4,23 @@ namespace Core;
 
 class Notification {
 
-    function success() {
+    public static function push($type, $message) {
+        echo '
+        <script>
+            alertify.'. $type . '("'.$message .'");
+        </script>
+        ';
+    }
+
+    public static function danger() {
 
     }
 
-    function danger() {
+    public static function warning() {
 
     }
 
-    function warning() {
-
-    }
-
-    function info() {
+    public static function info() {
 
     }
     

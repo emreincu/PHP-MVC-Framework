@@ -5,7 +5,7 @@ use Core\Controller;
 use App\Models\User;
 use Core\Cookie;
 use Core\Language;
-use core\View;
+use Core\View;
 
 class Home extends Controller {
     

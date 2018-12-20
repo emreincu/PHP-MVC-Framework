@@ -64,7 +64,7 @@
   border-radius: 0 0 5px 5px;
 }
 .alertify-notifier .ajs-message {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(240, 240, 240, 0.95);
   color: #000;
   text-align: center;
   border:1px solid #333;

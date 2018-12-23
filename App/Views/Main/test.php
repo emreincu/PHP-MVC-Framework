@@ -1,4 +1,3 @@
-<?php use Core\Notification; ?>
 <html>
     <head>
         <title>Test</title>
@@ -17,7 +16,6 @@
         <pre>
             <?= $language->hello ?>
         </pre>
-        <?= Notification::push("warning", "Test", 5); ?>
         <a href = '#' onclick = 'notification("error", "message")'>ERROR TEST</a>
         <a href = '#' onclick = 'notification("success", "message")'>SUCCESS TEST</a>
         <a href = '#' onclick = 'notification("warning", "message")'>WARNING TEST</a>

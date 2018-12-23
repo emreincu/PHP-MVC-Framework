@@ -2,7 +2,6 @@
 namespace Core;
 
 use Core\Language;
-use Core\Notification;
 
 class View {
 
@@ -23,7 +22,6 @@ class View {
             $language = new Language();
             $language = $language->getLanguage(Cookie::get("language"));
 
-            $notification = new Notification();
 
             if(file_exists(DIR_ROOT . DS . "App" . DS . "Views" . DS . "Layouts" . DS . self::$_layout . ".php")) {
                 include(DIR_ROOT . DS . "App" . DS . "Views" . DS . "Layouts" . DS . self::$_layout . ".php");

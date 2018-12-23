@@ -6,6 +6,7 @@ use App\Models\User;
 use Core\Cookie;
 use Core\Language;
 use Core\View;
+use Core\Notification;
 
 class Home extends Controller {
     

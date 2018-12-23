@@ -1,3 +1,4 @@
+<?php use Core\Notification; ?>
 <html>
     <head>
         <title>Test</title>
@@ -11,10 +12,12 @@
                 <li><?= $user['email'] ?></li> 
             <?php endforeach ?>
         </ul>
+        <a href = "<?= URL_ROOT ?>/language/set/tr">TURKISH</a>
+        <a href = "<?= URL_ROOT ?>/language/set/en">ENGLISH</a>
         <pre>
             <?= $language->hello ?>
         </pre>
-        <?= $notification->push("warning", "Test"); ?>
+        <?= Notification::push("warning", "Test", 5); ?>
         <a href = '#' onclick = 'notification("error", "message")'>ERROR TEST</a>
         <a href = '#' onclick = 'notification("success", "message")'>SUCCESS TEST</a>
         <a href = '#' onclick = 'notification("warning", "message")'>WARNING TEST</a>

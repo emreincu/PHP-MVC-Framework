@@ -1,12 +1,8 @@
 <?php
-
 namespace Core;
+
 use Core\Language;
 use Core\Database;
-
-//buraya tüm doğrulamaların isimlerini içeren string tipinde bir dizi tanımlanacak.
-// bu dizi döngü ile döndürülüp validation da array_key_exists kontrolü yapılacak.
-// eğer varsa aşağıdaki algoritma uygulanacak.
 
 class Validation {
     private static $messages, $passed;

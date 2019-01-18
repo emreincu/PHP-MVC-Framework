@@ -1,6 +1,3 @@
-<?php
-
-?>
 <html>
     <head>
         <title>Test</title>

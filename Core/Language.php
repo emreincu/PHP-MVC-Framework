@@ -1,7 +1,6 @@
 <?php
 namespace Core;
 
-use SimpleXMLElement;
 use Core\Cookie;
 
 class Language {

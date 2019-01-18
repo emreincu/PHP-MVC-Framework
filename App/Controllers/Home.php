@@ -2,15 +2,9 @@
 namespace App\Controllers;
 
 use Core\Controller;
-use Core\Cookie;
-use Core\Language;
 use Core\View;
-use Core\Notification;
-use Core\Hook;
-use Core\Uploader;
 use Core\Validation;
     
-
 use App\Models\User;
 
 class Home extends Controller {

@@ -1,16 +1,12 @@
 <?php
 namespace Core;
-use ReflectionClass;
-use Core\Annotation;
 use Core\Language;
-use Core\Hook;
 
 class Router {
     
     private $className;
     private $actionName;
    
-    const REGEX_ANNOTATION = '/@(?P<name>\w+)\s+(?P<value>.+)/';
     public static function route($url) {
         
 

@@ -1,9 +1,5 @@
 <?php
 namespace Core;
-use ReflectionClass;
-use ReflectionMethod;
-use ReflectionParameter;
-use Core\Cookie;
 
 /**
  * This class using for set and get php ini settings

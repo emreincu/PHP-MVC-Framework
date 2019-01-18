@@ -1,6 +1,6 @@
 <?php
 
-function dnd($data) {
+function _vd($data) {
     echo "<pre>";
     if($data) {
         var_dump($data);
@@ -10,15 +10,15 @@ function dnd($data) {
     echo "</pre>";
 }
 
-function sanitize($text) {
+function _sanitize($text) {
     return htmlentities($text, ENT_QUOTES, 'UTF-8');
 }
 
-function go($address) {
+function _go($address) {
     header("Location:" . $address);
 }
 
-function turn() {
+function _turn() {
     if(isset($_SERVER['HTTP_REFERER'])) {
         header('Location: ' . $_SERVER['HTTP_REFERER']);
     }else{
@@ -27,7 +27,7 @@ function turn() {
 
 }
 
-function pr($data) {
+function _pr($data) {
     echo "<pre>";
     print_r($data);
     echo "</pre>";

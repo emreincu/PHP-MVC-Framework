@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language>
-    <hello>Merhaba</hello>
-    <welcome>Web sitemize hoş geldiniz!</welcome>
+    <site>
+        <hello>Merhaba</hello>
+        <welcome>Web sitemize hoş geldiniz!</welcome>
+        <name>İsim</name>
+        <surname>Soy İsim</surname>
+        <checkbox>Kutucuk</checkbox>
+    </site>
+    <validation>
+        <min>:_label en az :_rule_value karakterli olmalı</min>
+        <max>:_label en fazla :_rule_value karakterli olmalı</max>
+        <required>:_label boş bırakılamaz</required>
+        <matches>:_label eşleşmiyor</matches>
+        <unique>:_label kaydı zaten var</unique>
+        <exists>:_label kaydı bulunamadı</exists>
+        <numeric>:_label nümerik olmalıdır</numeric>
+        <email>:_label geçerli bir e-posta adresi değil</email>
+    </validation>
 </language>

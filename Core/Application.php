@@ -12,18 +12,6 @@ class Application {
     public function __construct($controller, $action) {
         $this->_setReporting();
         $this->_unregisterGlobals();
-        $this->_setLanguage();
-       
-    }
-
-    private function _setLanguage() {
-        if(!Cookie::exists("language")) {
-            if(file_exists(DIR_ROOT . DS . "App" . DS . "Languages" . DS . DEFAULT_LANGUAGE . ".xml")) {
-                Cookie::set("language", DEFAULT_LANGUAGE);
-            }else{
-                die("Core\Application.php : The language file \"" . DEFAULT_LANGUAGE . "\" does not exists!");
-            }
-        }
     }
  
     private function _setReporting() {

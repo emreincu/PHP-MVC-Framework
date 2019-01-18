@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language>
-    <hello>Hello</hello>
-    <welcome>Welcome to our web site!</welcome>
+    <site>
+        <hello>Hello</hello>
+        <welcome>Welcome to our website!</welcome>
+        <name>Name</name>
+        <surname>Surname</surname>
+        <checkbox>Cheeckbox</checkbox>
+    </site>
+    <validation>
+        <min>:_label must be a minimum of :_rule_value characters.</min>
+        <max>:_label must be a maximum of :_rule_value characters.</max>
+        <required>:_label can not be empty</required>
+        <matches>:_label does not matches</matches>
+        <unique>:_label registaration already exists</unique>
+        <exists>:_label registartion does not exists</exists>
+        <numeric>:_label must be numeric</numeric>
+        <email>:_label is not a valid email address</email>
+    </validation>
 </language>

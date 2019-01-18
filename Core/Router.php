@@ -2,14 +2,17 @@
 namespace Core;
 use ReflectionClass;
 use Core\Annotation;
+use Core\Language;
+use Core\Hook;
 
 class Router {
     
     private $className;
     private $actionName;
-
+   
     const REGEX_ANNOTATION = '/@(?P<name>\w+)\s+(?P<value>.+)/';
     public static function route($url) {
+        
 
         $class = (isset($url[0]) && $url[0] != '') ? $url[0] : DEFAULT_CONTROLLER;
         $class = ucwords($class);
@@ -25,6 +28,7 @@ class Router {
         if(class_exists($class)){
             $dispatch = new $class($class, $action);
             if(method_exists($class, $action)) {
+                Language::initLanguage();
                 call_user_func_array([$dispatch, $action], $parameters);
             } else {
                 die("That method does not exists in the controller!");

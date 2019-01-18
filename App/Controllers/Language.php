@@ -10,7 +10,7 @@ class Language {
         if(!Cookie::exists($language)) {
             if(file_exists(DIR_ROOT . DS . "App" . DS . "Languages" . DS . $language . ".xml")) {
                 Cookie::set("language", $language);
-                turn();
+                _turn();
             }else{
                 die("App\Controllers\Language.php : The language file \"" . $language . "\" does not exists!");
             }
@@ -21,9 +21,9 @@ class Language {
         if(Cookie::exists("language"))
             return Cookie::get("language");
     }
-    
+
     public function kill() {
         Cookie::delete("language");
-        turn();
+        _turn();
     }
 }

@@ -3,6 +3,7 @@
 /* Debug configuration */
 define('DEBUG', true);
 define('DEBUG_DATABASE', false);
+define('DEBUG_CLASSES', false);
 
 /* Database configuration */
 define("DB_HOST", "localhost");
@@ -27,7 +28,7 @@ define("URL_JS", URL_ASSETS . DS . "js");
 define("URL_IMG", URL_ASSETS . DS . "images");
 
 define("URL_UPLOADS", URL_ROOT . DS . "uploads");
-
+define("DIR_UPLOADS", DIR_ROOT . DS . "uploads");
 define("URL_CSS_BOOTSTRAP", URL_ASSETS . DS . "vendor" . DS . "bootstrap" . DS . "css" . DS . "bootstrap.min.css");
 
 /* LOCAL configuration */

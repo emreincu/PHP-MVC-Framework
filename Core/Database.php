@@ -71,7 +71,7 @@ class Database{
         $sql = trim($sql);
 
         if(DEBUG_DATABASE) {
-            dnd($sql);
+            _vd($sql);
         }
 
         if($this->_query = $this->_conn->prepare($sql)) {
@@ -117,7 +117,7 @@ class Database{
         $sql = "INSERT INTO {$table} ({$fieldString}) VALUES ({$valueString})";
 
         if(DEBUG_DATABASE) {
-            dnd($sql);
+            _vd($sql);
         }
 
         if(!$this->run($sql, $values)->getError()) {

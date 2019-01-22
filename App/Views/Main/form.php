@@ -9,13 +9,17 @@
     <script src="main.js"></script>
 </head>
 <body>
-    <form method = "post" action = "<?= URL_ROOT ?>/Home/getForm" enctype="multipart/form-data">
+    <form method = "post" action = "<?= URL_ROOT ?>/Home/getForm?emre='emre adı'" enctype="multipart/form-data">
         <div class="form-group">
-            <label for="email">İsim:</label>
+            <label for="email"><?= $language->name ?>:</label>
             <input type="text" name="name" class="form-control border">
         </div>
         <div class="form-group">
-            <label for="email">Soyisim:</label>
+            <label for="email"><?= $language->surname ?>:</label>
+            <input type="text" name="surname" class="form-control border">
+        </div>
+        <div class="form-group">
+            <label for="email"><?= $language->age ?>:</label>
             <input type="text" name="surname" class="form-control border">
         </div>
         <div class="form-check">

@@ -1,5 +1,5 @@
 <?php $this->start('default_css') ?>
-    <link rel="stylesheet" href="<?= URL_ROOT ?>/App/Views/Main/css/alertify.css">
+    <link rel="stylesheet" href="<?= URL_ROOT ?>/App/Views/Main/css/alertify.min.css">
     <link rel="stylesheet" href="<?= URL_ROOT ?>/App/Views/Main/css/themes/semantic.rtl.css">
 <?php $this->end('default_css') ?>
 

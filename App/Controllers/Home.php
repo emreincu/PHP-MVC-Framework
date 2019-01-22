@@ -4,6 +4,7 @@ namespace App\Controllers;
 use Core\Controller;
 use Core\View;
 use Core\Validation;
+use Core\Uploader;
     
 use App\Models\User;
 
@@ -45,7 +46,6 @@ class Home extends Controller {
         if(!Validation::getPassed()) {
             _vd(Validation::getMessages());
         }
-        //$uploader = new Uploader();
-        //$uploader->uploadFile($_FILES, "upload");
+        Uploader::image($_FILES);
     }
 }

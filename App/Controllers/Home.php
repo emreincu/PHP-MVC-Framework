@@ -46,6 +46,6 @@ class Home extends Controller {
         if(!Validation::getPassed()) {
             _vd(Validation::getMessages());
         }
-        Uploader::image($_FILES);
+
     }
 }

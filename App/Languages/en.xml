@@ -4,7 +4,6 @@
         <hello>Hello</hello>
         <welcome>Welcome to our website!</welcome>
         <name>Name</name>
-        <age>Age</age>
         <surname>Surname</surname>
         <checkbox>Cheeckbox</checkbox>
     </site>

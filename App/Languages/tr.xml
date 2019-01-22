@@ -5,7 +5,6 @@
         <welcome>Web sitemize hoş geldiniz!</welcome>
         <name>İsim</name>
         <surname>Soy İsim</surname>
-        <age>Yaş</age>
         <checkbox>Kutucuk</checkbox>
     </site>
     <validation>

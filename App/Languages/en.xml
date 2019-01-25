@@ -5,7 +5,9 @@
         <welcome>Welcome to our website!</welcome>
         <name>Name</name>
         <surname>Surname</surname>
+        <age>Age</age>
         <checkbox>Cheeckbox</checkbox>
+        <city>City</city>
     </site>
     <validation>
         <min>:_label must be a minimum of :_rule_value characters.</min>

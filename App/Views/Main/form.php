@@ -20,11 +20,11 @@
         </div>
         <div class="form-group">
             <label for="email"><?= $language->age ?>:</label>
-            <input type="text" name="surname" class="form-control border">
+            <input type="text" name="yas" class="form-control border">
         </div>
         <div class="form-check">
             <label class="form-check-label">
-                <input type="checkbox" name="checkbox[]" class="form-check-input" value="1">Option 1
+                <input type="checkbox" name="checkbox[]" class="form-check-input" value="bu gün hava çok güzel">Option 1
             </label>
             </div>
             <div class="form-check">
@@ -36,6 +36,17 @@
             <label class="form-check-label">
                 <input type="checkbox" name="checkbox[]" class="form-check-input" value="3">Option 3
             </label>
+            <div class="form-check">
+            <label class="form-check-label">
+                <select name="city" class="form-check-input">
+                    <option></option>
+                    <option value = "İzmir">İzmir</option>
+                    <option>Elazığ</option>
+                    <option>Van</option>
+                    <option>Ankara</option>
+                </select>
+            </label>
+            </div>
         </div>
         <div class="form-group">
             <label for="email">Email address:</label>

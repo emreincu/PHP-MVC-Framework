@@ -189,5 +189,3 @@ class Database{
          return $this->_error;
     }
 }
-
- ?>

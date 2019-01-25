@@ -5,7 +5,9 @@
         <welcome>Web sitemize hoş geldiniz!</welcome>
         <name>İsim</name>
         <surname>Soy İsim</surname>
+        <age>Yaş</age>
         <checkbox>Kutucuk</checkbox>
+        <city>Şehir</city>
     </site>
     <validation>
         <min>:_label en az :_rule_value karakterli olmalı</min>

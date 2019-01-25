@@ -1,9 +1,6 @@
 <?php
 namespace Core;
 
-/**
- * This class using for set and get php ini settings
- */
 class Application {
     public function __construct($controller, $action) {
         $this->_setReporting();

@@ -1,4 +1,5 @@
 <?php
+
 namespace Core;
 
 use Core\Language;
@@ -9,14 +10,80 @@ class Validation {
     public static function validate($source, $items = []) {
         self::$messages = [];
         self::$passed = true;
-        foreach($source as $name => $value) {
-            if(gettype($value) != 'array') {
-                $value = Input::sanitize($value);
+
+        foreach($items as $name => $rules) {
+            if(isset($source[$name])) {
+                $value = $source[$name];
+                if(gettype($value) === "string") {
+                    $value = Input::sanitize($value);
+                }
             }else{
-                foreach($value as $value_key => $value_value) {
-                    $value[$value_key] = Input::sanitize($value_value);
+                $value = "";
+            }
+
+            foreach($rules as $rule_key => $rule_value) {
+                switch($rule_key) {
+                    case 'required':
+                        if(empty($value)) {
+                            self::addMessage([$name, 'required', $rule_value]);
+                        }
+                    break;
+                    case 'min':
+                        if(strlen($value) < $rule_value) {
+                            self::addMessage([$name, 'min', $rule_value]);
+                        }
+                    break;
+                    case 'max':
+                        if(strlen($value) > $rule_value) {
+                            self::addMessage([$name, 'max', $rule_value]);
+                        }
+                    break;
+                    case 'matches':
+                        $value2 = Input::sanitize(trim($source[$rule_value]));
+                        if($value !== $value2) {
+                            self::addMessage([$name, 'matches', $rule_value]);
+                        }
+                    break;
+                    case 'unique':
+                        $table = $rule_value[0];
+                        $key = $rule_value[1];
+                        $db = Database::getInstance();
+                        $db->selectFirst($table, [
+                            "where" => "$key = '$value'"
+                        ]);
+                        if($db->getCount() != 0) {
+                            self::addMessage([$name, 'unique', $rule_value]);
+                        }
+                    break;
+                    case 'exists':
+                        $table = $rule_value[0];
+                        $key = $rule_value[1];
+                        $db = Database::getInstance();
+                        $db->selectFirst($table, [
+                            "where" => "$key = '$value'"
+                        ]);
+                        if($db->getCount() == 0) {
+                            self::addMessage([$name, 'exists', $rule_value]);
+                        }
+                    break;
+                    case 'numeric':
+                        if(!is_numeric($value)) {
+                            self::addMessage([$name, 'numeric', $rule_value]);
+                        }
+                    break;
+                    case 'email':
+                        if(!filter_var($value, FILTER_VALIDATE_EMAIL)) {
+                            self::addMessage([$name, 'email', $rule_value]);
+                        }
+                    break;
                 }
             }
+        }
+
+
+        /*
+        foreach($source as $name => $value) {
+            $value = Input::sanitize($value);
             $rules = $items[$name];
             foreach($rules as $rule_key => $rule_value) {
                 switch($rule_key) {
@@ -76,6 +143,7 @@ class Validation {
                 }
             }
         }
+        */
     }
 
     private static function translate($messages) {

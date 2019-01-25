@@ -1,5 +1,7 @@
 <?php
+
 namespace Core;
+
 use Core\Database;
 
 class Model {
@@ -49,7 +51,4 @@ class Model {
     protected function getLastInsert() {
         return $this->_db->getLastID();
     }
-
 }
-
- ?>

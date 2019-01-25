@@ -41,11 +41,14 @@ class Home extends Controller {
             "checkbox" => [
                 'label' => "Checkbox",
                 'required' => true
+            ],
+            "city" => [
+                'required' => true
             ]
         ]);
+
         if(!Validation::getPassed()) {
             _vd(Validation::getMessages());
         }
-
     }
 }

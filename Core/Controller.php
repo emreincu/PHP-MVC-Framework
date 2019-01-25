@@ -1,5 +1,7 @@
 <?php
+
 namespace Core;
+
 use Core\Application;
 use Core\View;
 

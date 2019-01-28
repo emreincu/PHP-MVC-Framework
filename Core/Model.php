@@ -3,6 +3,7 @@
 namespace Core;
 
 use Core\Database;
+use Core\API;
 
 class Model {
 

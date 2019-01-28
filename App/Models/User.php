@@ -14,14 +14,10 @@ class User extends Model{
         return $this->select();
     }
 
-    public function getUserById() {
-        return [
-            "user" => [
-                "ad" => "Emre",
-                "soyad" => "Incu",
-                "yas" => "26"
-            ]
-        ];
+    public function getUserById($id) {
+        return $this->select([
+            "where" => "id = '{$id}'"
+        ]);
     }
 
     public function isLoged() {

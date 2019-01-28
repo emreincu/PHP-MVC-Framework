@@ -16,9 +16,7 @@ class Home extends Controller {
 
     public function index() {
         View::setLayout("frontend");
-        $user = new User();
-        $yield['users'] = $user->getUsers();
-        $this->view->render("Main/test", $yield);
+        $this->view->render("Main/test");
     }
 
     public function form() {
@@ -65,7 +63,8 @@ class Home extends Controller {
         );
 
         if(!Validation::getPassed()) {
-            _vd(json_decode(Validation::getMessages()));
+            $message =  Validation::getMessages();
+            echo $message;
         }
         
     }

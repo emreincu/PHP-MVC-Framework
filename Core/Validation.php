@@ -116,7 +116,6 @@ class Validation {
                                         }
                                     break;
                                     case 'max_ratio':
-                                        _vd($val ." ". $ratio);
                                         if($val < $ratio) {
                                             self::addMessage([$name, 'max_ratio', $val]);
                                         }
@@ -198,6 +197,7 @@ class Validation {
     }
 
     public static function getMessages() {
-        return self::translate(self::$messages);
+        $messages = self::translate(self::$messages);
+        return json_encode($messages);
     }
 }

@@ -65,7 +65,7 @@ class Home extends Controller {
         );
 
         if(!Validation::getPassed()) {
-            _vd(Validation::getMessages());
+            _vd(json_decode(Validation::getMessages()));
         }
         
     }

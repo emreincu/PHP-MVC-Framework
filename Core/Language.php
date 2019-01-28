@@ -10,6 +10,7 @@ class Language {
         if($language == null) {
             $language = DEFAULT_LANGUAGE;
         }
+        
         if(file_exists(DIR_ROOT . DS . "App" . DS . "Languages" . DS . $language . ".xml")) {
             $xml = simplexml_load_file(DIR_ROOT . DS . "App" . DS . "Languages" . DS . $language . ".xml");
             return $xml->site;

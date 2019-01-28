@@ -46,9 +46,11 @@ class Validation {
                         }
                     break;
                     case 'matches':
-                        $value2 = Input::sanitize(trim($post[$rule_value]));
-                        if($value !== $value2) {
-                            self::addMessage([$name, 'matches', $rule_value]);
+                        if(isset($post[$rule_value])) {
+                            $value2 = Input::sanitize(trim($post[$rule_value]));
+                            if($value !== $value2) {
+                                self::addMessage([$name, 'matches', $rule_value]);
+                            }
                         }
                     break;
                     case 'unique':

@@ -26,29 +26,47 @@ class Home extends Controller {
     }
 
     public function getForm() {
-        Validation::validate($_POST, [
+        
+        Validation::formValidate([
             "name" => [
-                'label' => "Adı",
                 'required' => true,
                 'min' => 3,
                 'matches' => "surname"
             ],
             "surname" => [
-                'label' => "Soyadı",
                 'required' => true,
                 'max' => 7
             ],
             "checkbox" => [
-                'label' => "Checkbox",
                 'required' => true
             ],
             "city" => [
                 'required' => true
+            ],
+            "photograph" => [
+                'required' => true,
+                'image' => [
+                    'max_width' => 2000,
+                    'min_width' => 150,
+                    'max_height' => 2500,
+                    'min_height' => 10,
+                    'max_ratio' => 10,
+                    'min_ratio' => 0,
+                    'max_size' => 750,
+                    'min_size' => 1220,
+                    'width' => 1920,
+                    'height' => 1080,
+                    'extensions' => ['png', 'jpg', 'gif']
+                ]
             ]
-        ]);
+            ],
+            $_POST,
+            $_FILES
+        );
 
         if(!Validation::getPassed()) {
             _vd(Validation::getMessages());
         }
+        
     }
 }

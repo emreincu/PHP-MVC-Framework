@@ -50,7 +50,7 @@
         </div>
         <div class="form-group">
             <label for="email">Email address:</label>
-            <input type="file" name="upload[]" multiple="multiple" class="form-control-file border">
+            <input type="file" name="photograph" multiple="multiple" class="form-control-file border">
         </div>
         <div class="form-group">
             <button class="btn">Send</button>

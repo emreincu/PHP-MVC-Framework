@@ -8,15 +8,27 @@
         <age>Age</age>
         <checkbox>Cheeckbox</checkbox>
         <city>City</city>
+        <photograph>Photograph</photograph>
     </site>
     <validation>
         <min>:_label must be a minimum of :_rule_value characters.</min>
         <max>:_label must be a maximum of :_rule_value characters.</max>
         <required>:_label can not be empty</required>
-        <matches>:_label does not matches</matches>
+        <matches>:_label and :_rule_value do not match</matches>
         <unique>:_label registaration already exists</unique>
         <exists>:_label registartion does not exists</exists>
         <numeric>:_label must be numeric</numeric>
         <email>:_label is not a valid email address</email>
+        <max_width>:_label width has to be less than :_rule_value px</max_width>
+        <min_width>:_label width has to be more than :_rule_value px</min_width>
+        <max_height>:_label height has to be less than :_rule_value px</max_height>
+        <min_height>:_label height has to be more than :_rule_value px</min_height>
+        <max_ratio>:_label ratio has to be less than :_rule_value</max_ratio>
+        <min_ratio>:_label ratio has to be more than :_rule_value</min_ratio>
+        <max_size>:_label size has to be less than :_rule_value KB</max_size>
+        <min_size>:_label size has to be more than :_rule_value KB</min_size>
+        <width>:_label width has to be equal to :_rule_value px</width>
+        <height>:_label height has to be equal to :_rule_value px</height>
+        <extensions>:_label extension must be one of :_rule_value</extensions>
     </validation>
 </language>

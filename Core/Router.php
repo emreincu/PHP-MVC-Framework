@@ -21,12 +21,16 @@ class Router {
             Response::setHeader("Content-Type" , "application/json");
 
             array_shift($url);
+
             $action = (isset($url[0]) && $url[0] != '') ? $url[0] : DEFAULT_ACTION;
             $action = ucwords($action);
+
             $class = '\\App\\APIs\\'.$action;
             array_shift($url);
+
             $action = (isset($url[0]) && $url[0] != '') ? $url[0] : DEFAULT_ACTION;
             array_shift($url);
+
             $parameters = $url;
 
             if(class_exists($class)){
@@ -41,7 +45,11 @@ class Router {
                 Response::setStatus(404);
             }
         }else{
-            $class = '\\App\\Controllers\\'.$class;
+            if($class === "Language") {
+                $class = '\\Core\\Language';
+            }else{
+                $class = '\\App\\Controllers\\'.$class;
+            }
             
             array_shift($url);
             $action = (isset($url[0]) && $url[0] != '') ? $url[0] : DEFAULT_ACTION;

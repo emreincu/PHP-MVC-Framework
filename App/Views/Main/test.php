@@ -7,7 +7,7 @@
     <body>
         <ul>
             <?php foreach($users as $user): ?>
-                <?= $user['email'] ."</br>"; ?>
+                <?= $user['email'] ." - </br>"; ?>
             <?php endforeach ?>
         </ul>
         <a href = "<?= URL_ROOT ?>/language/set/tr">TURKISH</a>

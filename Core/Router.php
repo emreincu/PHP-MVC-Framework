@@ -32,7 +32,7 @@ class Router {
             if(class_exists($class)){
                 $dispatch = new $class($class, $action);
                 if(method_exists($class, $action)) {
-                    Language::initLanguage();
+                    Language::init();
                     call_user_func_array([$dispatch, $action], $parameters);
                 } else {
                     Response::setStatus(404);
@@ -52,7 +52,7 @@ class Router {
             if(class_exists($class)){
                 $dispatch = new $class($class, $action);
                 if(method_exists($class, $action)) {
-                    Language::initLanguage();
+                    Language::init();
                     call_user_func_array([$dispatch, $action], $parameters);
                 } else {
                     die("That method does not exists in the controller!");

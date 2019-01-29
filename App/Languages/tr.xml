@@ -1,39 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language>
-    <site>
-        <hello>Merhaba</hello>
-        <welcome>Web sitemize hoş geldiniz!</welcome>
-        <name>İsim</name>
-        <surname>Soy İsim</surname>
-        <age>Yaş</age>
-        <checkbox>Kutucuk</checkbox>
-        <city>Şehir</city>
-        <photograph>Fotoğraf</photograph>
-    </site>
-    <validation>
-        <min>:_label en az :_rule_value karakterli olmalı</min>
-        <max>:_label en fazla :_rule_value karakterli olmalı</max>
-        <required>:_label boş bırakılamaz</required>
-        <matches>:_label1 ile :_label2 eşleşmiyor</matches>
-        <unique>:_label kaydı zaten var</unique>
-        <exists>:_label kaydı bulunamadı</exists>
-        <numeric>:_label nümerik olmalıdır</numeric>
-        <email>:_label geçerli bir e-posta adresi değil</email>
-        <max_width>:_label genişliği :_rule_value px'den küçük olmalıdır</max_width>
-        <min_width>:_label genişliği :_rule_value px'den büyük olmalıdır</min_width>
-        <max_height>:_label yüksekliği :_rule_value px'den küçük olmalıdır</max_height>
-        <min_height>:_label yükseliği :_rule_value px'den büyük olmalıdır</min_height>
-        <max_ratio>:_label oran orantısı (genişlik/yükseklik) :_rule_value'den küçük olmalıdır</max_ratio>
-        <min_ratio>:_label oran orantısı (genişlik/yükseklik) :_rule_value'den büyük olmalıdır</min_ratio>
-        <max_size>:_label dosya boyutu :_rule_value KB'dan küçük olmalıdır</max_size>
-        <min_size>:_label dosya boyutu :_rule_value KB'dan büyük olmalıdır</min_size>
-        <width>:_label genişliği :_rule_value px olmalıdır</width>
-        <height>:_label yüksekliği :_rule_value px olmalıdır</height>
-        <extensions>:_label uzantısı :_rule_value uzantılarından biri olmalıdır</extensions>
-    </validation>
-    <API>
-        <unable_to_create_item>Unable to create item</unable_to_create_item>
-        <item_was_created>Item was created</item_was_created>
-        <not_found_header_information>Header bilgisi bulunamadı</not_found_header_information>
-    </API>
+    <hello>Merhaba</hello>
+    <welcome>Web sitemize hoş geldiniz!</welcome>
+    <name>İsim</name>
+    <surname>Soy İsim</surname>
+    <age>Yaş</age>
+    <checkbox>Kutucuk</checkbox>
+    <city>Şehir</city>
+    <photograph>Fotoğraf</photograph>
 </language>

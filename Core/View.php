@@ -20,7 +20,7 @@ class View {
                 extract($yield);
             }
 
-            $language = Language::getLanguage(Cookie::get("language"));
+            $language = Language::getSite(Cookie::get("language"));
 
             if(file_exists(DIR_ROOT . DS . "App" . DS . "Views" . DS . "Layouts" . DS . self::$_layout . ".php")) {
                 include(DIR_ROOT . DS . "App" . DS . "Views" . DS . "Layouts" . DS . self::$_layout . ".php");

@@ -57,7 +57,7 @@ class User {
         Response::setHeader("Access-Control-Max-Age" , "3600");
         Response::setHeader("Access-Control-Allow-Headers" , "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
         
-        $language = Language::getAPI(Cookie::get("language"));
+        $language = Language::getAPI();
 
         $data = (array)json_decode(file_get_contents("php://input"));
         if($data == null) {

@@ -66,7 +66,7 @@ class Home extends Controller {
 
         if(!Validation::getPassed()) {
             $message =  Validation::getMessages();
-            echo "error!";
+            _vd($message);
         }
         
     }

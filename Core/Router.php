@@ -3,7 +3,6 @@
 namespace Core;
 
 use Core\Language;
-use Core\API;
 
 class Router {
     
@@ -16,6 +15,11 @@ class Router {
         $class = ucwords($class);
 
         if($class === "Api") {
+            Response::setHeader("Access-Control-Allow-Origin" , "*");
+            Response::setHeader("Content-Type" , "application/json; charset=UTF-8");
+            Response::setHeader("Access-Control-Allow-Credentials" , "true");
+            Response::setHeader("Content-Type" , "application/json");
+
             array_shift($url);
             $action = (isset($url[0]) && $url[0] != '') ? $url[0] : DEFAULT_ACTION;
             $action = ucwords($action);
@@ -31,10 +35,10 @@ class Router {
                     Language::initLanguage();
                     call_user_func_array([$dispatch, $action], $parameters);
                 } else {
-                    echo API::JsonEncode(null);
+                    Response::setStatus(404);
                 }
             }else{
-                echo API::JsonEncode(null);
+                Response::setStatus(404);
             }
         }else{
             $class = '\\App\\Controllers\\'.$class;

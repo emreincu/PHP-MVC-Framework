@@ -31,6 +31,18 @@ class Language {
         }
     }
 
+    public static function getAPI($language) {
+        if($language == null) {
+            $language = DEFAULT_LANGUAGE;
+        }
+        if(file_exists(DIR_ROOT . DS . "App" . DS . "Languages" . DS . $language . ".xml")) {
+            $xml = simplexml_load_file(DIR_ROOT . DS . "App" . DS . "Languages" . DS . $language . ".xml");
+            return $xml->API;
+        }else{
+            die("Core\Language.php (Validate) : The language file \"" . $language . "\" does not exists!");
+        }
+    }
+
     public static function initLanguage() {
         if(!Cookie::exists("language") || Cookie::get("language") == null) {
             if(file_exists(DIR_ROOT . DS . "App" . DS . "Languages" . DS . DEFAULT_LANGUAGE . ".xml")) {

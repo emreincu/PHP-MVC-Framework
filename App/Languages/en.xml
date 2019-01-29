@@ -31,4 +31,9 @@
         <height>:_label height has to be equal to :_rule_value px</height>
         <extensions>:_label extension must be one of :_rule_value</extensions>
     </validation>
+    <API>
+        <unable_to_create_item>Unable to create item</unable_to_create_item>
+        <item_was_created>Item was created</item_was_created>
+        <not_found_header_information>Not found header information</not_found_header_information>
+    </API>
 </language>

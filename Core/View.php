@@ -15,14 +15,12 @@ class View {
         $viewFolder = $viewArray;
         $viewFolder = implode(DS, $viewFolder);
         if(file_exists(DIR_ROOT .   DS . "App" . DS . "Views" . DS . $viewFolder . DS . $viewFile . ".php")) {
-
+            
             if(!empty($yield)) {
                 extract($yield);
             }
 
-            $language = new Language();
-            $language = $language->getLanguage(Cookie::get("language"));
-
+            $language = Language::getLanguage(Cookie::get("language"));
 
             if(file_exists(DIR_ROOT . DS . "App" . DS . "Views" . DS . "Layouts" . DS . self::$_layout . ".php")) {
                 include(DIR_ROOT . DS . "App" . DS . "Views" . DS . "Layouts" . DS . self::$_layout . ".php");

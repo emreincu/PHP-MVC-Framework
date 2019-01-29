@@ -7,7 +7,7 @@ use Core\Database;
 
 class Validation {
     private static $messages, $passed;
-    public static function formValidate($items, $post = [], $files = []) {
+    public static function validate($items, $post = [], $files = []) {
         self::$messages = [];
         self::$passed = true;
 
@@ -174,7 +174,10 @@ class Validation {
         $arrayLanguageSite = (array)$languageSite;
         foreach($messages as $message) {
             $rule_value = end($message);
-            $label = $arrayLanguageSite[$message[0]];
+            $label = $message[0];
+            if(isset($arrayLanguageSite[$message[0]])) {
+                $label = $arrayLanguageSite[$message[0]];
+            } 
             $item = $message[0];
             if ($message[1] == "matches") {
                 $rule_value = $arrayLanguageSite[$message[2]];
@@ -200,6 +203,6 @@ class Validation {
 
     public static function getMessages() {
         $messages = self::translate(self::$messages);
-        return json_encode($messages);
+        return $messages;
     }
 }

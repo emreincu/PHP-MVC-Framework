@@ -20,6 +20,10 @@ class User extends Model{
         ]);
     }
 
+    public function addUser($data) {
+        return $this->insert($data);
+    }
+
     public function isLoged() {
         return Cookie::exists("emre@gmail.com");
     }

@@ -5,7 +5,7 @@ use Core\Controller;
 use Core\View;
 use Core\Validation;
 use Core\Uploader;
-    
+
 use App\Models\User;
 
 class Home extends Controller {
@@ -16,7 +16,9 @@ class Home extends Controller {
 
     public function index() {
         View::setLayout("frontend");
-        $this->view->render("Main/test");
+        $user = new User();
+        $data['users'] = $user->getUsers();
+        $this->view->render("Main/test", $data);
     }
 
     public function form() {
@@ -25,7 +27,7 @@ class Home extends Controller {
 
     public function getForm() {
         
-        Validation::formValidate([
+        Validation::validate([
             "name" => [
                 'required' => true,
                 'min' => 3,
@@ -64,7 +66,7 @@ class Home extends Controller {
 
         if(!Validation::getPassed()) {
             $message =  Validation::getMessages();
-            echo $message;
+            echo "error!";
         }
         
     }

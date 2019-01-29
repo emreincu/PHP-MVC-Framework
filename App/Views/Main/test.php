@@ -6,7 +6,9 @@
     </head>
     <body>
         <ul>
-            <?= $users ?>
+            <?php foreach($users as $user): ?>
+                <?= $user['email'] ."</br>"; ?>
+            <?php endforeach ?>
         </ul>
         <a href = "<?= URL_ROOT ?>/language/set/tr">TURKISH</a>
         <a href = "<?= URL_ROOT ?>/language/set/en">ENGLISH</a>

@@ -3,7 +3,6 @@
 namespace Core;
 
 use Core\Database;
-use Core\API;
 
 class Model {
 
@@ -17,6 +16,7 @@ class Model {
 
     protected function select($params = []) {
         return $this->_db->select($this->_tables, $params);
+        
     }
 
     protected function getCount() {

@@ -57,7 +57,15 @@ class User {
         Response::setHeader("Access-Control-Max-Age" , "3600");
         Response::setHeader("Access-Control-Allow-Headers" , "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
         
+        $language = Language::getAPI(Cookie::get("language"));
+
         $data = (array)json_decode(file_get_contents("php://input"));
+        if($data == null) {
+            Response::setStatus(503);
+            echo json_encode(array("message" => (string) $language->unable_to_create_item));
+            exit;
+        }
+        
         Validation::validate([
             "id" => [
                 "required" => true,
@@ -69,7 +77,6 @@ class User {
             ]
         ], $data);
 
-        $language = Language::getAPI(Cookie::get("language"));
         
         if(Validation::getPassed()) {
             if($this->user->addUser($data)) {

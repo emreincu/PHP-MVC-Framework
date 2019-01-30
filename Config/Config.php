@@ -11,6 +11,14 @@ define("DB_USER", "root");
 define("DB_PASS", "e");
 define("DB_NAME", "mvc");
 
+/* Mailer configuration */
+
+define("SMTP_SERVER", "localhost");
+define("SMTP_USER", "root");
+define("SMTP_PASSWORD", "e");
+define("SMTP_PORT", "");
+define("SMTP_CHARSET", "UTF-8");
+
 /* Default configuration */
 define('DEFAULT_CONTROLLER', "Home");
 define('DEFAULT_ACTION', "index");

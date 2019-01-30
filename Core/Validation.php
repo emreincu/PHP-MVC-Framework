@@ -168,8 +168,8 @@ class Validation {
 
     private static function translate($messages) {
         $result = [];
-        $languageValidate = Language::getValidate(Cookie::get("language"));
-        $languageSite = Language::getSite(Cookie::get("language"));
+        $languageValidate = Language::getValidate();
+        $languageSite = Language::getSite();
         $arrayLanguageValidate = (array)$languageValidate;
         $arrayLanguageSite = (array)$languageSite;
         foreach($messages as $message) {

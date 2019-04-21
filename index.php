@@ -22,7 +22,6 @@ spl_autoload_register(function($className) {
 session_start();
 
 $url = isset($_SERVER['PATH_INFO']) ? explode('/', ltrim($_SERVER['PATH_INFO'], '/')) : array();
-
 Router::route($url);
 
 ?>

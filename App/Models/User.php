@@ -6,22 +6,18 @@ use Core\Cookie;
 
 class User extends Model{
 
-    public function __construct() {
-        parent::__construct("users");
-    }
-
     public function getUsers() {
-        return $this->select();
+        return $this->select("users");
     }
 
     public function getUserById($id) {
-        return $this->select([
+        return $this->select("users", [
             "where" => "id = '{$id}'"
         ]);
     }
 
     public function addUser($data) {
-        return $this->insert($data);
+        return $this->insert("users", $data);
     }
 
     public function isLoged() {

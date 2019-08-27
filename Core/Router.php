@@ -9,10 +9,6 @@ use Core\Language;
  */
 class Router {
     
-    private static $namespace;
-    private static $className;
-    private static $actionName;
-
    /**
     * Function route
     * @param array $url is the array of request

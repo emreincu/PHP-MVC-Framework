@@ -43,6 +43,10 @@ class Language {
         }
     }
 
+    /**
+     * function init
+     * @return void
+     */
     public static function init() {
         if(!Cookie::exists("language") || Cookie::get("language") == null) {
             if(file_exists(DIR_ROOT . DS . "App" . DS . "Languages" . DS . DEFAULT_LANGUAGE . ".xml")) {

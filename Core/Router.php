@@ -13,14 +13,14 @@ class Router {
     private $actionName;
 
    /**
-    * Function route: this function routing url
-    * @param string $url
+    * Function route
+    * @param array $url is the array of request
     * @return void
     */
     public static function route(array $url) {
 
-        /**
-         * feature-notice: i will add here the annotation.
+        /*
+         * feature-notice: i will add here the annotation system like spring mvc.
          */
 
         $class = (isset($url[0]) && $url[0] != '') ? $url[0] : DEFAULT_CONTROLLER;

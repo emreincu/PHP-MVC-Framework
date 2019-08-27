@@ -9,8 +9,9 @@ use Core\Language;
  */
 class Router {
     
-    private $className;
-    private $actionName;
+    private static $namespace;
+    private static $className;
+    private static $actionName;
 
    /**
     * Function route
@@ -23,18 +24,18 @@ class Router {
          * feature-notice: i will add here the annotation system like spring mvc.
          */
 
-        $class = (isset($url[0]) && $url[0] != '') ? $url[0] : DEFAULT_CONTROLLER;
-        $class = ucwords($class);
+        $class_name = (isset($url[0]) && $url[0] != '') ? $url[0] : DEFAULT_CONTROLLER;
+        $class_name = ucwords($class_name);
         $namespace = "";
 
         $default_class = DEFAULT_CONTROLLER;
         $default_action = DEFAULT_ACTION;
 
-        if($class === "Api") {
+        if($class_name === "Api") {
             array_shift($url);
             $namespace .= '\\App\\APIs\\';
             $default_class = DEFAULT_API;
-        }else if($class === "Language"){
+        }else if($class_name === "Language"){
             $namespace .= '\\Core\\';
             $default_class = "Language";
         }else{
@@ -42,8 +43,9 @@ class Router {
             $default_class = DEFAULT_CONTROLLER;
         }
 
-        $class = (isset($url[0]) && $url[0] != '') ? $url[0] : $default_class;
-        $class = $namespace . ucwords($class);
+        $class_name = (isset($url[0]) && $url[0] != '') ? $url[0] : $default_class;
+        
+        $class = $namespace . ucwords($class_name);
 
         array_shift($url);
         $action = (isset($url[0]) && $url[0] != '') ? $url[0] : $default_action;
@@ -62,21 +64,5 @@ class Router {
         }else{
             die("That class does not exists in the controllers!");
         }
-    }
-
-    public function setClassName($className) {
-        $this->className = $className;
-    }
-    
-    public function setActionName($actionName) {
-        $this->actionName = $actionName;
-    }
-
-    public function getClassName() {
-        return $this->className;
-    }
-    
-    public function getActionName() {
-        return $this->actionName;
     }
 }

@@ -165,18 +165,6 @@ class Database{
         return $this->_count;
     }
 
-    public function getRowCount($tables, $params) {
-        $sql = "SELECT COUNT(*) FROM {$tables}";
-        if(array_key_exists("where", $params)) {
-            $where = $params['where'];
-            $sql .= " WHERE $where";
-        }
-
-        $result = $this->_conn->prepare($sql);
-        $result->execute();
-        return $result->fetchColumn();
-    }
-
     public function getLastID() {
         return $this->_lastInsertID;
     }

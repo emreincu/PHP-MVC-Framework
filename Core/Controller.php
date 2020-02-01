@@ -7,7 +7,7 @@ use Core\View;
 
 class Controller extends Application {
     private $_controller, $_action;
-    protected $view;
+    public $view;
 
     public function __construct($controller, $action) {
         parent::__construct($controller, $action);

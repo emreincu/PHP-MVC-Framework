@@ -2,8 +2,14 @@
 
 namespace Core;
 
+/**
+ * Set & Get Header and their status codes.
+ */
 class Response {
 
+	/**
+	 * @var array $statusCodes Status codes array.
+	 */
 	public static $statusCodes = [
 		100 => 'Continue',
 		101 => 'Switching Protocols',
@@ -48,6 +54,13 @@ class Response {
 		505 => 'HTTP Version Not Supported'
 	];
 
+	/**
+	 * Set header
+	 * 
+	 * @param string $name Header name.
+	 * @param mixed $value Header value.
+	 * @return bool
+	 */
 	public static function setHeader($key, $value) {
 		if(!headers_sent()){
             header($key . ': ' . $value);
@@ -55,13 +68,19 @@ class Response {
         }
         return false;
     }
-    
+	
+	/**
+	 * Get header
+	 * 
+	 * @param string $key Header key.
+	 * @return array
+	 */
 	public static function getHeader($key) {
 		$defaultHeaders 	= getallheaders();
 		$customHeaders 	= headers_list();
 
-		if(self::arraySearchLike($key, $customHeaders) !== false) {
-			$index 	= self::arraySearchLike($key, $customHeaders);
+		if(self::_arraySearchLike($key, $customHeaders) !== false) {
+			$index 	= self::_arraySearchLike($key, $customHeaders);
 			$header = explode(':', $customHeaders[$index]);
 			return trim($header[1]);
 		} elseif(array_key_exists($key, $defaultHeaders)) {
@@ -72,18 +91,22 @@ class Response {
 		}
 	}
 
-	private static function arraySearchLike($element, $array) {
-		foreach($array as $key => $value) {
-			if(strpos($value, $element) !== false)
-				return $key;
-		}
-		return false;
-	}
-
+	/**
+	 * Set status
+	 * 
+	 * @param int $code Status code.
+	 * @return http_response_code
+	 */
 	public static function setStatus($code) {
 		return http_response_code($code);
 	}
 
+	/**
+	 * Get status
+	 * 
+	 * @param int $code Status code.
+	 * @return array
+	 */
 	public static function getStatus($code = null) {
 		if(is_null($code))
 			$statusCode = http_response_code();
@@ -94,6 +117,24 @@ class Response {
 			'code'	=> $statusCode,
 			'text'	=> self::$statusCodes[$statusCode]
 		];
+	}
+
+	/**
+	 * Get header
+	 * 
+	 * @param string $key Header key.
+	 * @return array
+	 */
+	private static function _arraySearchLike($element, $array) {
+		foreach($array as $key => $value) {
+			if(strpos($value, $element) !== false)
+				return $key;
+		}
+		return false;
+	}
+
+	public function json($message, $status_code) {
+
 	}
 
 }

@@ -6,7 +6,25 @@ use Core\Language;
 use Core\Database;
 
 class Validation {
-    private static $messages, $passed;
+
+    /**
+     * @var array
+     */
+    private static $messages;
+    
+    /**
+     * @var bool
+     */
+    private static $passed;
+
+    /**
+     * Validate data
+     * 
+     * @param array $items
+     * @param array $post Post data
+     * @param array $files Fıles data
+     * @return void
+     */
     public static function validate($items, $post = [], $files = []) {
         self::$messages = [];
         self::$passed = true;
@@ -166,25 +184,41 @@ class Validation {
         }
     }
 
+    /**
+     * Translate error messages
+     * 
+     * @param array $messages
+     * @return array
+     */
     private static function translate($messages) {
         $result = [];
-        $languageValidate = Language::getValidate();
-        $languageSite = Language::getSite();
-        $arrayLanguageValidate = (array)$languageValidate;
-        $arrayLanguageSite = (array)$languageSite;
+
+        if(file_exists(DIR_ROOT . DS . "App" . DS . "Languages" . DS . Language::get() . ".xml")) {
+            $languageSite = (array) simplexml_load_file(DIR_ROOT . DS . "App" . DS . "Languages" . DS . Language::get() . ".xml");
+        }else{
+            die("Core\Validation.php : The language file \"" . Language::get() . "\" does not exists!");
+        }
+
+        if(file_exists(DIR_ROOT . DS . "Core" . DS . "Languages" . DS . Language::get() . ".xml")) {
+            $languageXML = (array) simplexml_load_file(DIR_ROOT . DS . "Core" . DS . "Languages" . DS . Language::get() . ".xml");
+        }else{
+            die("Core\Validation.php : The language file \"" . Language::get() . "\" does not exists!");
+        }
+        $languageValidate = $languageXML['validation'];
+
         foreach($messages as $message) {
             $rule_value = end($message);
             $label = $message[0];
-            if(isset($arrayLanguageSite[$message[0]])) {
-                $label = $arrayLanguageSite[$message[0]];
+            if(isset($languageSite[$message[0]])) {
+                $label = $languageSite[$message[0]];
             } 
             $item = $message[0];
-            if ($message[1] == "matches") {
-                $rule_value = $arrayLanguageSite[$message[2]];
+            if ($message[1] === "matches") {
+                $rule_value = $languageSite[$message[2]];
                 $label1 = $label;
                 $label2 = $rule_value;
             }
-            $translated = $arrayLanguageValidate[$message[1]];
+            $translated = $languageSite[$message[1]];
             $translated = str_replace(":_", "$",$translated);
             $evaluated = eval("\$translated = \"$translated\";");
             $result[$item] = $translated;
@@ -192,15 +226,31 @@ class Validation {
         return $result;
     }
 
+    /**
+     * Add message to messages
+     * 
+     * @param array $message
+     * @return void
+     */
     private static function addMessage($message) {
         self::$passed = false;
         self::$messages[] = $message;
     }
 
+    /**
+     * Get data validation result
+     * 
+     * @return bool
+     */
     public static function getPassed() {
         return self::$passed;
     }
 
+    /**
+     * Get messages
+     * 
+     * @return array
+     */
     public static function getMessages() {
         $messages = self::translate(self::$messages);
         return $messages;

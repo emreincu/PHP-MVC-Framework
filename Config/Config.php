@@ -8,7 +8,7 @@ define('DEBUG_CLASSES', false);
 /* Database configuration */
 define("DB_HOST", "localhost");
 define("DB_USER", "root");
-define("DB_PASS", "e");
+define("DB_PASS", "wtty");
 define("DB_NAME", "mvc");
 
 /* Mailer configuration */
@@ -22,6 +22,7 @@ define("SMTP_CHARSET", "UTF-8");
 /* Default configuration */
 define('DEFAULT_CONTROLLER', "Home");
 define('DEFAULT_ACTION', "index");
+define('DEFAULT_API', "Home");
 define('DEFAULT_TEMPLATE', "default");
 define('DEFAULT_LAYOUT', 'default');
 define('SITE_TITLE', "MVC Framework Title");
